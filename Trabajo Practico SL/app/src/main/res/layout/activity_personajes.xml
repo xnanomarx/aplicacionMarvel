@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonajesActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/fondobyncomic"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnHeroes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#37020F"
+            android:text="Heroes"
+            android:textColor="#CAC9C9"
+            android:textSize="50sp"
+
+            />
+
+        <Button
+            android:id="@+id/btnVillanos"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:text="Villanos"
+            android:backgroundTint="#37020F"
+            android:textColor="#CAC9C9"
+            android:textSize="50sp"
+
+            />
+
+        <Button
+            android:id="@+id/btnAntiHeroes"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="#37020F"
+            android:text="Antiheroes"
+            android:textColor="#CAC9C9"
+            android:textSize="50sp"
+
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

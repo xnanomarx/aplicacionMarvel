@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/strangefondo"> <!-- Color de fondo temático de Marvel -->
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/strange"
+        />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DOCTOR STRANGE"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/fondoprueba"/>
+
+    <TextView
+        android:id="@+id/realNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Real: Stephen Strange"
+        android:textSize="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:padding="4dp"
+        android:background="@drawable/fondoprueba"/>
+
+    <TextView
+        android:id="@+id/powersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poderes: Magia, Proyección astral, Manipulación de la realidad, Invocación, Control del tiempo"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondoprueba"/>
+
+    <TextView
+        android:id="@+id/weaknessesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debilidades: Vunerabilidad física, Dependencia de la magia"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondoprueba"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Historia"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondoprueba"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:background="@drawable/fondoprueba">
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Doctor Strange, creado por el escritor Stan Lee y el dibujante Steve Ditko, hizo su primera aparición en ‘Strange Tales’ #110, publicado en julio de 1963. Este cómic presenta la historia de origen de Stephen Strange y su transformación en el Hechicero Supremo de la Tierra.\nStephen Strange es generalmente representado como un hombre de mediana edad con cabello oscuro y barba. En su identidad de Doctor Strange, suele vestir un atuendo característico de hechicero, que consiste en una capa roja con detalles dorados y una túnica azul oscuro con motivos místicos. Lleva un amuleto del Ojo de Agamotto en el pecho, que es una poderosa reliquia mágica.\nDoctor Strange es conocido por su inteligencia excepcional y su enfoque en el conocimiento y el dominio de las artes místicas. Inicialmente un cirujano arrogante y egocéntrico, su personalidad cambia drásticamente después de un accidente automovilístico que afecta sus manos y lo lleva a buscar la ayuda de la magia para recuperar su destreza. Se convierte en un individuo humilde y dedicado a proteger el universo contra amenazas sobrenaturales y cósmicas.\nDoctor Strange es uno de los hechiceros más poderosos en el Universo Marvel y posee una amplia gama de habilidades mágicas, incluyendo la manipulación de la realidad, la proyección astral, la teletransportación, la invocación de entidades místicas y más. Es un experto en hechicería y tiene un vasto conocimiento de las artes místicas y los encantamientos."
+            android:lineSpacingExtra="3dp"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="4dp"
+            android:textColor="@android:color/white" /> <!-- Color de texto en blanco -->
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/modokfondo"> <!-- Color de fondo temático de Marvel -->
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/modok"
+        />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M.O.D.O.K"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/fonndoamarillo"/>
+
+    <TextView
+        android:id="@+id/realNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Real: George Tarleton"
+        android:textSize="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:padding="4dp"
+        android:background="@drawable/fonndoamarillo"/>
+
+    <TextView
+        android:id="@+id/powersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poderes: Super inteligencia, Poderes psíquicos, Control tecnológico, Táctica/Estrategia"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:padding="6dp"
+        android:background="@drawable/fonndoamarillo"/>
+
+    <TextView
+        android:id="@+id/weaknessesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debilidades: Cuerpo vulnerable, Dependencia de tecnología, Inestabilidad emocional, Limitación de movilidad"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:padding="6dp"
+        android:background="@drawable/fonndoamarillo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Historia"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:padding="6dp"
+        android:background="@drawable/fonndoamarillo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:background="@drawable/fonndoamarillo">
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MODOK fue creado por el escritor Stan Lee y el dibujante Jack Kirby. Hizo su primera aparición en ‘Tales of Suspense’ #93, publicado en septiembre de 1967. Fue presentado como un agente y líder de la organización AIM (Avanzada Idea Mecánica) en una historia protagonizada por Iron Man y el Capitán América.\nMODOK (Organismo Mental Diseñado Solo Para Asesinar) es una entidad con una cabeza y cerebro enormes que están conectados a un cuerpo mecánico flotante. Su cabeza es de gran tamaño en comparación con su cuerpo y está contenida en una estructura cibernética. Suele tener una expresión facial desfigurada y amenazante, con ojos rojos y una boca que a veces se asemeja a una sonrisa maliciosa.\nMODOK fue originalmente George Tarleton, un científico que trabajaba para AIM. Fue sometido a un proceso de modificación genética y tecnológica que transformó su cuerpo en la forma icónica de MODOK. Aunque inicialmente se presentó como un líder frío y calculador de AIM, su origen y motivaciones han sido explorados en diversas interpretaciones y relatos.\nMODOK posee una inteligencia y conocimiento sobrehumanos, lo que lo convierte en un estratega y planificador formidable. Sus habilidades psiónicas varían, pero a menudo incluyen la telepatía y la capacidad para controlar mentes. Tiene acceso y control sobre tecnología avanzada, y su cuerpo mecánico flotante le otorga movilidad aérea."
+            android:lineSpacingExtra="3dp"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="4dp"
+            android:textColor="@android:color/black" /> <!-- Color de texto en blanco -->
+
+    </ScrollView>
+
+</LinearLayout>
