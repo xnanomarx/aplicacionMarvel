@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        tools:text="Email"
-        android:textColor="@color/white"/>
+        android:hint="Email"
+        android:textColorHint="#979797"/>
 
     <TextView
 
@@ -50,8 +50,8 @@
         android:inputType="textPassword"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:text="Password"
-        android:textColor="@color/white"/>
+        android:hint="Password"
+        android:textColorHint="#979797"/>
     <CheckBox
         android:id="@+id/Recordar"
         android:layout_width="wrap_content"
