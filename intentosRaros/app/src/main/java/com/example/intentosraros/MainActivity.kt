@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
                 val intentInicio = Intent(this, PersonajesActivity::class.java)
                 startActivity(intentInicio)
 
-
             }
             Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show()
         }

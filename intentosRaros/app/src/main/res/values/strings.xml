@@ -45,4 +45,6 @@
     </string>
     <string name="title_activity_wolverine">Wolverine</string>
     <string name="title_activity_spiderman">Spiderman</string>
+    <string name="titulo">Personajes</string>
+    <string name="titulo2">Peliculas</string>
 </resources>

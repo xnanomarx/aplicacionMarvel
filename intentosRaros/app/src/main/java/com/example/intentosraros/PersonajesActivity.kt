@@ -3,17 +3,27 @@ package com.example.intentosraros
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
+import androidx.appcompat.widget.Toolbar
 
 class PersonajesActivity : AppCompatActivity() {
 
     lateinit var botonHeroes: Button
     lateinit var botonVillanos: Button
     lateinit var botonAntiheroes: Button
+    lateinit var toolbar: Toolbar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personajes)
+
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title = resources.getString(R.string.titulo)
+
 
         botonHeroes = findViewById(R.id.btnHeroes)
         botonHeroes.setOnClickListener{
@@ -34,4 +44,20 @@ class PersonajesActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.item_agregar){
+            val intentListado = Intent(this, ListadoPeliculasActivity::class.java)
+            startActivity(intentListado)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
+
 }
