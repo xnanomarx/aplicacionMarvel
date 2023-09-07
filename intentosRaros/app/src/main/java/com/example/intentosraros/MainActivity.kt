@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var TextoEmail: EditText
     lateinit var password: EditText
-    lateinit var Recordar: CheckBox
+    lateinit var recordar: CheckBox
     lateinit var BotonRegistrar: Button
     lateinit var BotonIniciarSesion: Button
 
@@ -22,27 +22,52 @@ class MainActivity : AppCompatActivity() {
 
         TextoEmail = findViewById(R.id.TextoEmail)
         password = findViewById(R.id.password)
-        Recordar = findViewById(R.id.Recordar)
+        recordar = findViewById(R.id.Recordar)
         BotonRegistrar = findViewById(R.id.BotonRegistrar)
         BotonIniciarSesion = findViewById(R.id.BotonIniciarSesion)
 
-        BotonIniciarSesion.setOnClickListener {
-            var mensaje = "Iniciar sesion"
-            if(TextoEmail.text.toString().isEmpty() || password.text.toString().isEmpty()){
-                mensaje+= " - Faltan datos"
-            }else{
-                mensaje+= " - OK."
-                val intentInicio = Intent(this, PersonajesActivity::class.java)
-                startActivity(intentInicio)
+        var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales),
+            MODE_PRIVATE)
+        var usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario),"").toString()
+        var passwordGuardada = preferencias.getString(resources.getString(R.string.password_usuario),"").toString()
 
-            }
-            Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show()
+        if(usuarioGuardado.isNotEmpty() && passwordGuardada.isNotEmpty()){
+            startMainActivity(usuarioGuardado)
         }
+
         BotonRegistrar.setOnClickListener {
             val intentRegister = Intent(this,RegisterActivity::class.java)
             startActivity(intentRegister)
         }
 
+        BotonIniciarSesion.setOnClickListener {
+            var mensaje = "Iniciar sesion"
+            var nom = TextoEmail.text.toString()
+            var pas = password.text.toString()
+            if(nom.isEmpty() || pas.isEmpty()){
+                mensaje+= " - Faltan datos"
+            }else{
+                mensaje+= " - OK."
 
+                if(recordar.isChecked){
+                    var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales),
+                        MODE_PRIVATE)
+                    preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nom).apply()
+                    preferencias.edit().putString(resources.getString(R.string.password_usuario), pas).apply()
+                }
+
+                startMainActivity(TextoEmail.text.toString())
+            }
+            Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
+
+    private fun startMainActivity(usuarioGuardado: String) {
+        val intentInicio = Intent(this, MarvelHistoriaActivity::class.java)
+        intentInicio.putExtra("nombre", usuarioGuardado)
+        startActivity(intentInicio)
+        finish()
     }
 }

@@ -46,7 +46,7 @@ class PersonajesActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menupelis, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -54,6 +54,7 @@ class PersonajesActivity : AppCompatActivity() {
         if(item.itemId == R.id.item_agregar){
             val intentListado = Intent(this, ListadoPeliculasActivity::class.java)
             startActivity(intentListado)
+            finish()
         }
         return super.onOptionsItemSelected(item)
     }

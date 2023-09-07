@@ -47,4 +47,8 @@
     <string name="title_activity_spiderman">Spiderman</string>
     <string name="titulo">Personajes</string>
     <string name="titulo2">Peliculas</string>
+    <string name="nombre_usuario">NOMBRE</string>
+    <string name="password_usuario">PASSWORD</string>
+    <string name="sp_credenciales">SP_CREDENCIALES</string>
+    <string name="marvel">Marvel</string>
 </resources>

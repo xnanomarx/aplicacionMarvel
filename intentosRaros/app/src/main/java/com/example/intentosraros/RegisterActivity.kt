@@ -31,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
                 mensaje+= " - Faltan datos"
             }else{
                 mensaje+= " - Usuario registrado"
-                val intentInicio2 = Intent(this, PersonajesActivity::class.java)
+                val intentInicio2 = Intent(this, MarvelHistoriaActivity::class.java)
                 startActivity(intentInicio2)
                 finish()
             }
