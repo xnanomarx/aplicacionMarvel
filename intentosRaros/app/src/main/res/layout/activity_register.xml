@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
     android:orientation="vertical"
-    android:background="@drawable/marvelpersonajes"
+    android:background="@drawable/imagenmarvelnueva2"
     >
 
     <LinearLayout
@@ -18,46 +18,47 @@
         android:gravity="center">
         <EditText
             android:id="@+id/TxtNombre"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:textSize="20sp"
             android:hint="Nombre"
             android:inputType="text"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordeboton"
+            android:background="@drawable/marcoejemplo"
             android:paddingLeft="10dp"
+
             />
 
 
 
         <EditText
             android:id="@+id/TxtApellido"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:textSize="20sp"
             android:hint="Apellido"
             android:inputType="text"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordeboton"
+            android:background="@drawable/marcoejemplo"
             android:paddingLeft="10dp"
             />
 
 
         <EditText
             android:id="@+id/TxtEmail"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:textSize="20sp"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordeboton"
+            android:background="@drawable/marcoejemplo"
             android:paddingLeft="10dp"
             />
 
@@ -65,24 +66,24 @@
 
         <EditText
             android:id="@+id/psswrd"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:inputType="textPassword"
             android:textSize="20sp"
             android:hint="Password"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/bordeboton"
+            android:background="@drawable/marcoejemplo"
             android:paddingLeft="10dp"
             />
 
         <Button
             android:id="@+id/BtnRegistrar"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Registrar"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#23082C"
             android:textColor="#F4F0C8"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"
