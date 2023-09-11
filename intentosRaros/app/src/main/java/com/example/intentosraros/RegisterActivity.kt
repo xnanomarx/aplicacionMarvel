@@ -13,7 +13,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
 import com.example.intentosraros.UsuarioDao
-import com.example.intentosraros.MiDBHelper
 class RegisterActivity : AppCompatActivity() {
 
     lateinit var TextoNombre: EditText
@@ -21,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var TextoEmail: EditText
     lateinit var password: EditText
     lateinit var BotonRegistrar: Button
+    lateinit var mensaje: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,6 @@ class RegisterActivity : AppCompatActivity() {
         BotonRegistrar = findViewById(R.id.BtnRegistrar)
 
         BotonRegistrar.setOnClickListener {
-            var mensaje = "Registro"
 
             var nombre = TextoNombre.text.toString()
             var apellido = TextoApellido.text.toString()
@@ -43,15 +42,15 @@ class RegisterActivity : AppCompatActivity() {
                     .isEmpty() || TextoNombre.text.toString()
                     .isEmpty() || TextoApellido.text.toString().isEmpty()
             ) {
-                mensaje += " - Faltan datos"
-                MiDBHelper(this).emailExists("culo")
+                mensaje = "Faltan datos"
             } else {
                 val emailNuevo = email
-                val dbHelper = MiDBHelper(this)
+                val bdd = AppDataBase.getDatabase(this)
+                val checkMail = bdd.usuarioDao().GetUserByUserName(emailNuevo)
 
-                if (!dbHelper.emailExists(emailNuevo)) {
+                if (checkMail == null) {
                     // El email no está registrado, procede con el registro del usuario
-                    mensaje += " - Usuario registrado"
+                    mensaje = "Usuario registrado con éxito"
 
                     var nuevoUsuario = Usuario(nombre, apellido, email, contrasenia)
                     AppDataBase.getDatabase(this).usuarioDao().insertUsuario(nuevoUsuario)
@@ -61,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
                     finish()
                 } else {
                     // El email ya está registrado
-                    Toast.makeText(this, "Email ya registrado", Toast.LENGTH_SHORT).show()
+                    mensaje = "Este email ya está en uso"
                 }
 
             }

@@ -14,6 +14,7 @@ interface UsuarioDao {
     @Query("select * from `usuarios.table` where email = :email")
     fun GetUserByUserName(email:String): Usuario?
 
+
     @Query("SELECT * FROM 'usuarios.table' WHERE email = :correoElectronico")
     fun emailExists (correoElectronico: String): Usuario?
 

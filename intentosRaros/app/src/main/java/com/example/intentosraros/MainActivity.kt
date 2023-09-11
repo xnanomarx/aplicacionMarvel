@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 if(checkCredentials(nom,pas)){
                     startMainActivity(TextoEmail.text.toString())
                 }else{
-                    Toast.makeText(this,"credenciales incorrectas", Toast.LENGTH_LONG).show()
+                    mensaje = "Credenciales incorrectas"
                 }
 
 
