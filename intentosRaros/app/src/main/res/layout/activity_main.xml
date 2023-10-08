@@ -16,10 +16,10 @@
         app:srcCompat="@drawable/marvellogo"
         android:layout_gravity="center"/>
     <TextView
-
+        android:id="@+id/IngresarMail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingresar Email"
+        android:text="Ingresar E-Mail"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_margin="10dp"
