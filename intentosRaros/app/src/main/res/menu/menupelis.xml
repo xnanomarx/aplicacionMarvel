@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/item_agregar"
-        android:title="Peliculas"
+        android:title="Series"
         app:showAsAction="never"
         android:iconTint="@color/black"
         android:icon="@drawable/baseline_menu_24"
