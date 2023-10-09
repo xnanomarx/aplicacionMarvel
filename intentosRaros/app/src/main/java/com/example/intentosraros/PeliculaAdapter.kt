@@ -7,17 +7,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.intentosraros.network.Serie
 
-class PeliculaAdapter (var peliculas: MutableList<Pelicula>, var context: Context): RecyclerView.Adapter<PeliculaAdapter.PeliculaViewHolder>() {
+class PeliculaAdapter (var peliculas: MutableList<Serie>, var context: Context): RecyclerView.Adapter<PeliculaAdapter.PeliculaViewHolder>() {
 
 
     override fun onBindViewHolder(holder: PeliculaViewHolder, position: Int) {
         val item = peliculas.get(position)
-        holder.txNombre.text = item.nombre
-        holder.txFecha.text = item.fecha
+        holder.txNombre.text = item.title
+        holder.txFecha.text = item.startYear.toString()
+        holder.txFechaEnd.text = item.endYear.toString()
         holder.itemView.setOnClickListener(
             View.OnClickListener {
-                Toast.makeText(context, item.nombre, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, item.title, Toast.LENGTH_SHORT).show()
             }
         )
     }
@@ -33,10 +35,12 @@ class PeliculaAdapter (var peliculas: MutableList<Pelicula>, var context: Contex
     class PeliculaViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val txNombre: TextView
         val txFecha: TextView
+        val txFechaEnd: TextView
 
         init {
             txNombre = view.findViewById(R.id.tvPelicula)
             txFecha = view.findViewById(R.id.tvFecha)
+            txFechaEnd = view.findViewById(R.id.tvFechaEnd)
         }
     }
 

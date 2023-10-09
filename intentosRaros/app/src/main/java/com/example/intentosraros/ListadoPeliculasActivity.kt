@@ -3,10 +3,22 @@ package com.example.intentosraros
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import com.example.intentosraros.network.Serie
+import com.example.intentosraros.network.SerieResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class ListadoPeliculasActivity : AppCompatActivity() {
     lateinit var rvPeliculas : RecyclerView
@@ -18,33 +30,16 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_listado_peliculas)
 
         rvPeliculas = findViewById(R.id.recyclerExamenes)
-        peliculasAdapter = PeliculaAdapter(getPeliculas(), this)
+        peliculasAdapter = PeliculaAdapter(ArrayList(), this) // Inicializa el adaptador con una lista vacía
+        lifecycleScope.launch {
+            obtenerSeriesDesdeAPICorrutina()
+        }
         rvPeliculas.adapter = peliculasAdapter
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = resources.getString(R.string.titulo2)
-    }
 
-
-
-    private fun getPeliculas(): MutableList<Pelicula> {
-        var peliculas: MutableList<Pelicula> = ArrayList()
-        peliculas.add(Pelicula(1, "Avengers 1", "2022-04-05"))
-        peliculas.add(Pelicula(2, "Avengers 2", "2022-04-05"))
-        peliculas.add(Pelicula(3, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(4, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(5, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(6, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(7, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(8, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(9, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(10, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(11, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(12, "Ingenieria de Software 1", "2022-04-05"))
-        peliculas.add(Pelicula(13, "Ingenieria de Software 1", "2022-04-05"))
-
-        return peliculas
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,9 +55,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-<<<<<<< Updated upstream
-=======
-
+/*
     private fun obtenerSeriesDesdeAPI() {
         val client = ApiClient.apiService.fetchSeries(20) // Cambia el límite según tus necesidades
 
@@ -87,8 +80,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
                 Toast.makeText(this@ListadoPeliculasActivity, "No se pudo conectar", Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
+    }*/
 
     private suspend fun obtenerSeriesDesdeAPICorrutina() {
         try {
@@ -122,6 +114,5 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
 
 
->>>>>>> Stashed changes
 
 }
