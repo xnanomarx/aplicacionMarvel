@@ -8,12 +8,17 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intentosraros.network.Serie
 import com.example.intentosraros.network.SerieResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class ListadoPeliculasActivity : AppCompatActivity() {
     lateinit var rvPeliculas : RecyclerView
@@ -26,7 +31,9 @@ class ListadoPeliculasActivity : AppCompatActivity() {
 
         rvPeliculas = findViewById(R.id.recyclerExamenes)
         peliculasAdapter = PeliculaAdapter(ArrayList(), this) // Inicializa el adaptador con una lista vacía
-        obtenerSeriesDesdeAPI()
+        lifecycleScope.launch {
+            obtenerSeriesDesdeAPICorrutina()
+        }
         rvPeliculas.adapter = peliculasAdapter
 
         toolbar = findViewById(R.id.toolbar)
@@ -48,7 +55,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
+/*
     private fun obtenerSeriesDesdeAPI() {
         val client = ApiClient.apiService.fetchSeries(20) // Cambia el límite según tus necesidades
 
@@ -73,6 +80,30 @@ class ListadoPeliculasActivity : AppCompatActivity() {
                 Toast.makeText(this@ListadoPeliculasActivity, "No se pudo conectar", Toast.LENGTH_SHORT).show()
             }
         })
+    }*/
+
+    private suspend fun obtenerSeriesDesdeAPICorrutina() {
+        try {
+            val series = withContext(Dispatchers.IO) {
+                val response = ApiClient.apiService.fetchSeries(20).execute()
+                if (response.isSuccessful) {
+                    response.body()?.data?.results ?: emptyList()
+                } else {
+                    emptyList()
+                }
+            }
+
+            // Actualizamos el RecyclerView en el hilo principal
+            withContext(Dispatchers.Main) {
+                actualizarRecyclerView(series)
+            }
+        } catch (e: Exception) {
+            // Manejamos errores de red u otras excepciones en el hilo principal
+            withContext(Dispatchers.Main) {
+                Toast.makeText(this@ListadoPeliculasActivity, "Error en la conexion", Toast.LENGTH_SHORT).show()
+                Log.e("API", "Error: ${e.message}", e)
+            }
+        }
     }
 
     private fun actualizarRecyclerView(series: List<Serie>) {

@@ -18,7 +18,7 @@ abstract class AppDataBase : RoomDatabase() {
                 synchronized(this) {
                     INSTANCIA = Room.databaseBuilder(
                     contexto, AppDataBase::class.java, "base_app_usuario")
-                        .allowMainThreadQueries()
+                        //.allowMainThreadQueries()
                         .fallbackToDestructiveMigration()
                         .build()
                 }
