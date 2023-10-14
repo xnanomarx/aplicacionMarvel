@@ -99,34 +99,14 @@ class MainActivity : AppCompatActivity() {
                     preferencias.edit().putString(resources.getString(R.string.password_usuario), pas).apply()
                     startMainActivity(TextoEmail.text.toString())
                 }
-
-
-                /*if(recordar.isChecked){
-                    var preferencias = getSharedPreferences(resources.getString(R.string.sp_credenciales),
-                        MODE_PRIVATE)
-                    preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nom).apply()
-                    preferencias.edit().putString(resources.getString(R.string.password_usuario), pas).apply()
-                }*/
                 if(checkCredentials(nom,pas)){
                     startMainActivity(TextoEmail.text.toString())
                 }else{
                     mensaje = "Credenciales incorrectas"
                 }
-
-
-
-                //startMainActivity(TextoEmail.text.toString())
             }
             Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show()
         }
-
-
-
-
-
-
-
-
     }
 
     private fun startMainActivity(usuarioGuardado: String) {
