@@ -12,7 +12,13 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
+import androidx.lifecycle.lifecycleScope
 import com.example.intentosraros.UsuarioDao
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+
 class RegisterActivity : AppCompatActivity() {
 
     lateinit var TextoNombre: EditText
@@ -44,25 +50,29 @@ class RegisterActivity : AppCompatActivity() {
             ) {
                 mensaje = "Faltan datos"
             } else {
-                val emailNuevo = email
-                val bdd = AppDataBase.getDatabase(this)
-                val checkMail = bdd.usuarioDao().GetUserByUserName(emailNuevo)
+                lifecycleScope.launch {
+                    val emailNuevo = email
+                    val bdd = AppDataBase.getDatabase(this@RegisterActivity)
+                    val checkMail = bdd.usuarioDao().GetUserByUserName(emailNuevo)
 
-                if (checkMail == null) {
-                    // El email no está registrado, procede con el registro del usuario
-                    mensaje = "Usuario registrado con éxito"
+                    if (checkMail == null) {
+                        // El email no está registrado, procede con el registro del usuario
+                        mensaje = "Usuario registrado con éxito"
 
-                    var nuevoUsuario = Usuario(nombre, apellido, email, contrasenia)
-                    AppDataBase.getDatabase(this).usuarioDao().insertUsuario(nuevoUsuario)
+                        var nuevoUsuario = Usuario(nombre, apellido, email, contrasenia)
 
-                    val intentInicio2 = Intent(this, MarvelHistoriaActivity::class.java)
-                    startActivity(intentInicio2)
-                    finish()
-                } else {
-                    // El email ya está registrado
-                    mensaje = "Este email ya está en uso"
+                        withContext(Dispatchers.IO){//inserto al usuario utilizando un hilo de fondo
+                            AppDataBase.getDatabase(this@RegisterActivity).usuarioDao().insertUsuario(nuevoUsuario)
+                        }
+
+                        val intentInicio2 = Intent(this@RegisterActivity, MarvelHistoriaActivity::class.java)
+                        startActivity(intentInicio2)
+                        finish()
+                    } else {
+                        // El email ya está registrado
+                        mensaje = "Este email ya está en uso"
+                    }
                 }
-
             }
 
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
