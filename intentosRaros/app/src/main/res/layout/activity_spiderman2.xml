@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/spidermanfondo"> <!-- Color de fondo temático de Marvel -->
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/spiderman"
+        />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPIDERMAN"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/fondorojo"/>
+
+    <TextView
+        android:id="@+id/realNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Real: Peter Parker"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:padding="4dp"
+        android:background="@drawable/fondorojo"/>
+
+    <TextView
+        android:id="@+id/powersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poderes: Fuerza sobrehumana, Regeneración leve, Tela de arañas resistentes, Escalar Paredes, Sentido arácnido"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojo"/>
+
+    <TextView
+        android:id="@+id/weaknessesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debilidades: Responsabilidad personal, Aracnofobia, Vulnerabilidad física"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Historia"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:background="@drawable/fondorojo">
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spider-Man, creado por Stan Lee y Steve Ditko, hizo su primera aparición en ‘Amazing Fantasy’ #15, publicado en agosto de 1962. Fue presentado como un personaje único debido a su enfoque en un adolescente como protagonista en lugar del típico adulto que era común en los superhéroes de la época.\nPeter Parker es generalmente representado como un joven de contextura delgada y altura promedio. Tiene cabello castaño y ojos marrones. Cuando se convierte en Spider-Man, utiliza un traje rojo y azul ajustado. El traje presenta una icónica araña negra en el pecho y en la espalda. El traje también incluye lentes blancos en los ojos que pueden cambiar de tamaño para mostrar las expresiones de Spider-Man.\nSpider-Man posee habilidades sobrehumanas derivadas de la picadura de una araña radiactiva. Estas habilidades incluyen una fuerza aumentada, agilidad sobrehumana, reflejos rápidos y la capacidad de adherirse a las superficies gracias a su habilidad de trepar paredes. Además, tiene un ‘sentido arácnido’, una especie de intuición que le permite detectar peligros inminentes.\nPeter Parker es un estudiante inteligente y tímido con un sentido del humor característico. Es conocido por su ingenio y su tendencia a hacer comentarios sarcásticos durante el combate. A pesar de su rol como Spider-Man, Peter Parker lucha por equilibrar sus responsabilidades como superhéroe con su vida personal y su trabajo como fotógrafo. Es un personaje con un fuerte sentido de la responsabilidad y un deseo genuino de hacer el bien.\nPeter Parker se convirtió en Spider-Man después de ser mordido por una araña radiactiva en un laboratorio científico. La muerte de su tío Ben a manos de un ladrón que él pudo haber detenido previamente lo llevó a adoptar el lema ‘Un gran poder conlleva una gran responsabilidad’. Esta lección se convirtió en el núcleo de su motivación como superhéroe."
+            android:lineSpacingExtra="3dp"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="4dp"
+            android:textColor="@android:color/white" /> <!-- Color de texto en blanco -->
+
+    </ScrollView>
+
+</LinearLayout>

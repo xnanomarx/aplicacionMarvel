@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/wandafondo"> <!-- Color de fondo temático de Marvel -->
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wanda"
+        />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BRUJA ESCARLATA"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/fondorojocarmesi"/>
+
+    <TextView
+        android:id="@+id/realNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Real: Wanda Maximoff"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:padding="4dp"
+        android:background="@drawable/fondorojocarmesi"/>
+
+    <TextView
+        android:id="@+id/powersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poderes: Magia del caos, Manipulación de la realidad, Vuelo, Telequinesis, Proyección de energía"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojocarmesi"/>
+
+    <TextView
+        android:id="@+id/weaknessesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debilidades: Inestabilidad emocional, Vulnerabilidad física, Concentración"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojocarmesi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Historia"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:padding="6dp"
+        android:background="@drawable/fondorojocarmesi"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:background="@drawable/fondorojocarmesi">
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="La Bruja Escarlata hizo su primera aparición en ‘X-Men’ #4, publicado en marzo de 1964. Fue creada por el escritor Stan Lee y el dibujante Jack Kirby como miembro de la Hermandad de Mutantes de Magneto. En sus primeras apariciones, Wanda y su hermano gemelo, Pietro (Quicksilver), eran villanos que luchaban contra los X-Men debido a su lealtad a Magneto.\nWanda Maximoff es generalmente representada como una mujer de altura promedio, con cabello oscuro que a menudo ha sido retratado en diferentes tonos de rojo a lo largo de los años. Su atuendo como la Bruja Escarlata varía, pero suele incluir elementos rojos y oscuros en su vestimenta.\nA lo largo de las décadas, la personalidad de Wanda ha experimentado cambios debido a diferentes interpretaciones y enfoques de los escritores. En general, es retratada como una figura compleja con una mezcla de determinación, fuerza y vulnerabilidad. Su historia a menudo explora temas de identidad, poder y lucha personal.\nLa Bruja Escarlata tiene una amplia gama de habilidades mágicas y psiónicas, incluyendo la manipulación de la realidad, la hechicería, la telequinesis y la proyección de energía. Estas habilidades le otorgan un poder considerable, pero también pueden volverse impredecibles y peligrosas cuando se encuentra en estados emocionales intensos."
+            android:lineSpacingExtra="3dp"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="10dp"
+            android:padding="4dp"
+            android:textColor="@android:color/white" /> <!-- Color de texto en blanco -->
+
+    </ScrollView>
+
+</LinearLayout>
