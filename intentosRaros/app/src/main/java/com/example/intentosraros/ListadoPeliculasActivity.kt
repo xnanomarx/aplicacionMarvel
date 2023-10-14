@@ -88,6 +88,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
                 val response = ApiClient.apiService.fetchSeries(20).execute()
                 if (response.isSuccessful) {
                     response.body()?.data?.results ?: emptyList()
+
                 } else {
                     emptyList()
                 }
@@ -110,6 +111,7 @@ class ListadoPeliculasActivity : AppCompatActivity() {
         peliculasAdapter.peliculas.clear() // Limpia los datos existentes en el adaptador
         peliculasAdapter.peliculas.addAll(series) // Agrega las nuevas series al adaptador
         peliculasAdapter.notifyDataSetChanged() // Notifica al adaptador que los datos han cambiado
+
     }
 
 
