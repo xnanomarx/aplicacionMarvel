@@ -19,5 +19,5 @@ interface UsuarioDao {
     fun emailExists (correoElectronico: String): Usuario?
 
     @Insert
-    fun insertUsuario(usuario: Usuario)
+    suspend fun insertUsuario(usuario: Usuario)
 }
