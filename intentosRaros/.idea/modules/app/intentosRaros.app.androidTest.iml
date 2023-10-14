@@ -278,5 +278,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.collection:collection-ktx:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-common:2.5.2" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="intentosRaros.app.main" />
 </module>
