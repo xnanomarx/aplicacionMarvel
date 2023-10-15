@@ -48,12 +48,22 @@ class ListadoPeliculasActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.item_personajes){
-            val intentPj = Intent(this, PersonajesActivity::class.java)
-            startActivity(intentPj)
-            finish()
+        when (item.itemId) {
+            R.id.item_personajes -> {
+                val intentPj = Intent(this, PersonajesActivity::class.java)
+                startActivity(intentPj)
+                finish()
+                return true
+            }
+            R.id.item_cerrar -> {
+                // Código para cerrar sesión y redirigir al usuario a RegisterActivity
+                val intentLogin = Intent(this, MainActivity::class.java)
+                startActivity(intentLogin)
+                finish()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 /*
     private fun obtenerSeriesDesdeAPI() {

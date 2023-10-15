@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         var usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario),"").toString()
         var passwordGuardada = preferencias.getString(resources.getString(R.string.password_usuario),"").toString()
 
+
         if(usuarioGuardado.isNotEmpty() && passwordGuardada.isNotEmpty()){
             val notificacion = NotificationCompat.Builder(this, IDCanal).also {noti->
                 noti.setContentTitle("Recordar Usuario")
@@ -99,6 +100,7 @@ class MainActivity : AppCompatActivity() {
                     preferencias.edit().putString(resources.getString(R.string.password_usuario), pas).apply()
                     startMainActivity(TextoEmail.text.toString())
                 }
+
                 if(checkCredentials(nom,pas)){
                     startMainActivity(TextoEmail.text.toString())
                 }else{
@@ -108,6 +110,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,mensaje, Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun startMainActivity(usuarioGuardado: String) {
         val intentInicio = Intent(this, MarvelHistoriaActivity::class.java)

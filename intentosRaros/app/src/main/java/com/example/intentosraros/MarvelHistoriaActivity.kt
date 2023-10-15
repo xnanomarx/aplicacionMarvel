@@ -33,6 +33,9 @@ class MarvelHistoriaActivity : AppCompatActivity() {
         }else if(item.itemId == R.id.item_personajes){
             val intentListado = Intent(this, PersonajesActivity::class.java)
             startActivity(intentListado)
+        }else if(item.itemId == R.id.item_cerrar) {
+            val intentListado = Intent(this, MainActivity::class.java)
+            startActivity(intentListado)
         }
         return super.onOptionsItemSelected(item)
     }
